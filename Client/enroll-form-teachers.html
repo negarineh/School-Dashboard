@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Dashboard</title>
+
+		<meta name="description" content="Common form elements and layouts" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
+		<link rel="stylesheet" href="assets/css/chosen.min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-datepicker3.min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-timepicker.min.css" />
+		<link rel="stylesheet" href="assets/css/daterangepicker.min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-colorpicker.min.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+
+		<style>
+			.autocomplete {
+				/*the container must be positioned relative:*/
+				position: relative;
+				display: inline-block;
+				}
+				input {
+				border: 1px solid transparent;
+				background-color: #f1f1f1;
+				padding: 10px;
+				font-size: 16px;
+				}
+				input[type=text] {
+				background-color: #f1f1f1;
+				width: 100%;
+				}
+				input[type=submit] {
+				background-color: DodgerBlue;
+				color: #fff;
+				}
+				.autocomplete-items {
+				position: absolute;
+				border: 1px solid #d4d4d4;
+				border-bottom: none;
+				border-top: none;
+				z-index: 99;
+				/*position the autocomplete items to be the same width as the container:*/
+				top: 100%;
+				left: 0;
+				right: 0;
+				}
+				.autocomplete-items div {
+				padding: 10px;
+				cursor: pointer;
+				background-color: #fff; 
+				border-bottom: 1px solid #d4d4d4; 
+				}
+				.autocomplete-items div:hover {
+				/*when hovering an item:*/
+				background-color: #e9e9e9; 
+				}
+				.autocomplete-active {
+				/*when navigating through the items using the arrow keys:*/
+				background-color: DodgerBlue !important; 
+				color: #ffffff; 
+				}
+		</style>
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="ace-icon glyphicon glyphicon-home"></i>
+							Dashboard
+						</small>
+					</a>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container ace-save-state" id="main-container">
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<ul class="nav nav-list">
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							
+							<span class="menu-text">Register</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						
+						</a>
+
+							<ul class="submenu">
+								<li class="">
+									<a href="register-form-teachers.html">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Teachers
+									</a>
+
+									<b class="arrow"></b>
+								</li>
+
+								<li class="">
+									<a href="register-form-students.html">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Students
+									</a>
+
+									<b class="arrow"></b>
+								</li>
+
+								<li class="">
+									<a href="add-class-form.html">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Classes
+									</a>
+
+									<b class="arrow"></b>
+								</li>
+							</ul>
+					</li>
+
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							
+							<span class="menu-text">Enroll</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						
+						</a>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="enroll-form-teachers.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Teachers
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="enroll-form-students.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Students
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Tables </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="teacher-class-table.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Teachers
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="student-class-table.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Students
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+						</ul>
+						
+						<ul class="nav nav-list">
+								<li class="">
+									<a href="javascript: logout()">
+										<i class="ace-icon fa fa-power-off"></i>
+										Log Out
+									</a>
+
+									<b class="arrow"></b>
+								</li>
+							</ul>
+					</li>
+				</ul>
+			</div>
+	
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="index.html">Home</a>
+                            </li>
+                            
+							<li class="active">Enroll Teacher From</li>
+                        </ul><!-- /.breadcrumb -->
+                        
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								Add Class
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									Register teachers for classes
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+                        <div class="row">
+                                <div class="col-xs-12">
+    
+                                    <!-- PAGE CONTENT BEGINS -->
+                                    <form action="javascript: submitForm()" method="POST" class="form-horizontal" role="form">
+										
+										<div class="form-group" id="hidden-success">
+											<p class="alert alert-success" >
+												Successfully Added
+											</p>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-2 control-label no-padding-right align-left" for="name"> Enter Teacher Name </label>
+
+											<div class="autocomplete" class="col-sm-9">
+												<input type="text" id="name" placeholder="Teacher Name" autocomplete="off" class="col-xs-10 col-sm-5" name="name" id="name" required>
+											</div>
+										</div>
+
+                                        <div class="space-4"></div>
+
+                                        
+                                        <table id="teacher-table" class="table  table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="center">
+                                                        <!-- <label class="pos-rel">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"></span>
+                                                        </label> -->
+                                                    </th>
+                                                    <th>Code</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                </tr>
+											</thead>
+											<tbody id="tbody-teacher">
+
+											</tbody>
+                                        </table>
+
+                                        <table id="simple-table" class="table  table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="center">
+                                                        <!-- <label class="pos-rel">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"></span>
+                                                        </label> -->
+                                                    </th>
+                                                    <th>Code</th>
+                                                    <th>Class Name</th>
+                                                    <th>Category</th>
+                                                    <th>Day</th>
+                                                    <th>Hour</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+    
+                                        <div class="clearfix form-actions">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button class="btn btn-info" type="submit">
+                                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                                    Submit
+                                                </button>
+    
+                                                &nbsp; &nbsp; &nbsp;
+                                                <button class="btn" type="reset" onclick="resetForm()">
+                                                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </div>
+    
+                                    </form>
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+		</div><!-- /.main-container -->
+
+        <!-- basic scripts -->
+			<script type="text/javascript">
+
+				fetch('/school/JWT', {
+					method: 'POST',
+					body: JSON.stringify({
+						JWT   : document.cookie,
+					}),
+					headers: {"Content-Type": "application/json"}
+				})
+				.then(function(response){
+					return response.json();
+				})
+				.then((data) => {
+					if ((document.cookie == null) || (document.cookie == ''))
+						window.location.href = 'login.html';
+						})
+				.catch(err => console.log(err));
+				
+				document.getElementById('hidden-success').style.display = 'none';
+
+                var table        = document.getElementById('simple-table');
+				var tableTeacher = document.getElementById('teacher-table');
+            
+                function buildTable(data) {
+                    var thead = document.createElement("thead");
+                    var tbody = document.createElement("tbody");
+
+                    data.forEach(function(el) {
+                        var tr            = document.createElement("tr");
+                        var checkbox      = document.createElement("input");
+                            checkbox.type = "checkbox";
+                        var td            = document.createElement("td");
+                            td.appendChild(checkbox);
+                            tr.appendChild(td); 
+                        for (var o in el) {  
+                            var td        = document.createElement("td");
+                            var td1       = document.createElement("td");
+                            td.appendChild(document.createTextNode(el[o]))
+                            tr.appendChild(td);
+                        }
+                        tbody.appendChild(tr); 
+                    });
+                    table.appendChild(tbody);             
+                    return table;
+                }
+                
+                fetch('/school/classes/getall', {
+                    method: 'GET',
+                    headers: {"Content-Type": "application/json",
+                              "accept"      : "application/json"}
+                })
+                .then((response) => {
+                        return response.json();
+                })
+                .then((data) => {
+                    buildTable(data.classes)
+                        })
+                .catch(err => console.log(err));
+
+                function buildTeacherTable(data) {
+                    var thead = document.createElement("thead");
+					var tbody = document.createElement("tbody");
+					tbody.id = "tbody-teacher";
+
+                    // data.forEach(function(el) {
+                        var tr            = document.createElement("tr");
+                        var checkbox      = document.createElement("input");
+                            checkbox.type = "radio";
+                            checkbox.name = 'radio';
+                        var td            = document.createElement("td");
+                            td.appendChild(checkbox);
+                            tr.appendChild(td); 
+                        for (var o in data) {  
+                            var td        = document.createElement("td");
+                            td.appendChild(document.createTextNode(data[o]))
+                            tr.appendChild(td);
+                        }
+                        tbody.appendChild(tr); 
+                    // });
+                    tableTeacher.appendChild(tbody);             
+                    return tableTeacher;
+                }
+
+				var list_of_staffs = [];
+                fetch('/school/staffs/getallstaffs', {
+                    method: 'GET',
+                    headers: {"Content-Type": "application/json",
+                              "accept"      : "application/json"}
+                })
+                .then((response) => {
+                        return response.json();
+                })
+                .then((data) => {
+					// buildTeacherTable(data.staffs)
+					fillList(data.staffs);
+					list_of_staffs = data.staffs;
+                        })
+                .catch(err => console.log(err));
+
+                function findCheckedItems() {
+
+                    var checkedItems  = [];
+                    var inputs        = table.getElementsByTagName("input");
+                    var t             = table.rows;
+                    var checkboxIndex = 0;
+                    for (var i = 0; i < inputs.length; i++) {
+                        if (inputs[i].type.toLowerCase() === 'checkbox') {
+                            if (inputs[i].checked) {
+                                checkedItems.push(t[i+1].cells[1].innerHTML);
+                            }
+                            checkboxIndex++;
+                        }
+                    }
+                    return checkedItems;
+                    }
+                    function findSelectedItems() {
+
+                    var checkedItems  = [];
+                    var inputs        = tableTeacher.getElementsByTagName("input");
+                    var t             = tableTeacher.rows;
+                    var checkboxIndex = 0;
+                    for (var i = 0; i < inputs.length; i++) {
+                        if (inputs[i].type.toLowerCase() === 'radio') {
+                            if (inputs[i].checked) {
+                                checkedItems.push(t[i+1].cells[1].innerHTML);
+                            }
+                            checkboxIndex++;
+                        }
+                    }
+                    return checkedItems;
+                }
+                
+                submitForm = () => {
+
+                    var ClassId = findCheckedItems();
+                    var StaffId = findSelectedItems();
+
+                    fetch('/school/staffs/add_class', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            StaffId : StaffId,
+							ClassId : ClassId,
+                        }),
+                        headers: {"Content-Type": "application/json"}
+                    })
+                    .then((response) => {
+                            return response.json();
+                    })
+                    .then((data) => {
+                        if (data.success === true)
+							document.getElementById('hidden-success').style.display = 'block';
+                            })
+                    .catch(err => console.log(err));
+                }
+                
+				resetForm = () => {
+					document.getElementById('hidden-success').style.display = 'none';
+				}
+				
+				logout = () => {
+					document.cookie = '';
+					document.location.href = 'login.html'
+				}
+
+			/////////////////////////////////////////////////////////////
+			staff_list = [];
+			fillList = (list) => {
+				list.map(staff => {
+					staff_list.push(staff.first + " " + staff.last);
+				})
+				return staff_list;
+			}
+
+			findStaff = (name) => {
+				var staff_name = '';
+				for(var i= name.search(' ')+1; i<name.length; i++)
+					staff_name += name[i];
+				// var JWTemail = document.cookie.substring(document.cookie.length - JWTstr.length, JWTstr);
+				list_of_staffs.map(staff_info => {
+					if(staff_info.first === staff_name) {
+						buildTeacherTable(staff_info)
+					}
+				})
+			}
+				function autocomplete(inp, arr) {
+					/*the autocomplete function takes two arguments,
+					the text field element and an array of possible autocompleted values:*/
+					var currentFocus;
+					/*execute a function when someone writes in the text field:*/
+					inp.addEventListener("input", function(e) {
+						var a, b, i, val = this.value;
+						/*close any already open lists of autocompleted values*/
+						closeAllLists();
+						if (!val) { return false;}
+						currentFocus = -1;
+						/*create a DIV element that will contain the items (values):*/
+						a = document.createElement("DIV");
+						a.setAttribute("id", this.id + "autocomplete-list");
+						a.setAttribute("class", "autocomplete-items");
+						/*append the DIV element as a child of the autocomplete container:*/
+						this.parentNode.appendChild(a);
+						/*for each item in the array...*/
+						for (i = 0; i < arr.length; i++) {
+							/*check if the item starts with the same letters as the text field value:*/
+							if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+							/*create a DIV element for each matching element:*/
+							b = document.createElement("DIV");
+							/*make the matching letters bold:*/
+							b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+							b.innerHTML += arr[i].substr(val.length);
+							/*insert a input field that will hold the current array item's value:*/
+							b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+							/*execute a function when someone clicks on the item value (DIV element):*/
+								b.addEventListener("click", function(e) {
+								/*insert the value for the autocomplete text field:*/
+								inp.value = this.getElementsByTagName("input")[0].value;
+								/*close the list of autocompleted values,
+								(or any other open lists of autocompleted values:*/
+								closeAllLists();
+							});
+							a.appendChild(b);
+							}
+						}
+					});
+					/*execute a function presses a key on the keyboard:*/
+					inp.addEventListener("keydown", function(e) {
+						var x = document.getElementById(this.id + "autocomplete-list");
+						if (x) x = x.getElementsByTagName("div");
+						if (e.keyCode == 40) {
+							/*If the arrow DOWN key is pressed,
+							increase the currentFocus variable:*/
+							currentFocus++;
+							/*and and make the current item more visible:*/
+							addActive(x);
+						} else if (e.keyCode == 38) { //up
+							/*If the arrow UP key is pressed,
+							decrease the currentFocus variable:*/
+							currentFocus--;
+							/*and and make the current item more visible:*/
+							addActive(x);
+						} else if (e.keyCode == 13) {
+							/*If the ENTER key is pressed, prevent the form from being submitted,*/
+							e.preventDefault();
+							if (currentFocus > -1) {
+							/*and simulate a click on the "active" item:*/
+							if (x) x[currentFocus].click();
+							}
+							if (x !== null && x[0].textContent !== null){
+							document.getElementById("tbody-teacher").remove();
+							findStaff(x[currentFocus].textContent);
+							}
+							document.getElementById("tbody-teacher").remove();
+							findStaff(x[currentFocus].textContent);
+						}
+					});
+					function addActive(x) {
+						/*a function to classify an item as "active":*/
+						if (!x) return false;
+						/*start by removing the "active" class on all items:*/
+						removeActive(x);
+						if (currentFocus >= x.length) currentFocus = 0;
+						if (currentFocus < 0) currentFocus = (x.length - 1);
+						/*add class "autocomplete-active":*/
+						x[currentFocus].classList.add("autocomplete-active");
+					}
+					function removeActive(x) {
+						/*a function to remove the "active" class from all autocomplete items:*/
+						for (var i = 0; i < x.length; i++) {
+						x[i].classList.remove("autocomplete-active");
+						}
+					}
+					function closeAllLists(elmnt) {
+						/*close all autocomplete lists in the document,
+						except the one passed as an argument:*/
+						var x = document.getElementsByClassName("autocomplete-items");
+						for (var i = 0; i < x.length; i++) {
+						if (elmnt != x[i] && elmnt != inp) {
+						x[i].parentNode.removeChild(x[i]);
+						}
+					}
+					}
+					/*execute a function when someone clicks in the document:*/
+					document.addEventListener("click", function (e) {
+						closeAllLists(e.target);
+					});
+					}
+			autocomplete(document.getElementById("name"), staff_list);
+
+        </script>
+
+	</body>
+</html>
